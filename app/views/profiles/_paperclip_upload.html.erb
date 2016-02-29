@@ -1,0 +1,35 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h4 class="modal-title">Upload your picture</h4>
+  </div>
+  <div class="modal-body">
+    <% if @student.photo_file_name %>
+      <div class="photo">
+        <%= image_tag @student.photo.url(:thumb), class: '' %>
+      </div>
+      <div class="">
+          <%= form_for @student, :html => { multipart: true }, method: :delete do |form| %>
+          <div class="photo-button">
+            <%= form.submit "Delete picture", class: "btn btn-danger" %>
+          </div>
+          <% end %>
+      </div>
+    <% else %>
+        <div class="add_photo_image">
+          <%= form_for @student, :html => { multipart: true } do |form| %>
+            <div class="btn btn-success fileinput-button">
+            Browse for your picture
+              <%= form.file_field :photo %>
+            </div>
+            <div class="photo-button">
+              <%= form.submit "Start Upload", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+    <% end %>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>

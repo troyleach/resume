@@ -1,0 +1,160 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// not sure why I have to make the width 102% not to have the white space on the right
+ body {
+  font-size: 2em;
+  width: 102%;
+ }
+
+ .well {
+  text-align: left;
+ }
+
+ 
+
+ #landing_page {
+  
+ }
+.nav-container {
+  height: 60px;
+}
+ .navbar-brand {
+  
+ }
+
+.splat {
+  position: fixed;
+  top: 1%;
+  margin-left: 75%;
+  z-index: 1000;
+}
+
+.user_feed_back {
+  margin-top: 60px;
+}
+
+.menu-click-button {
+  text-align: center;
+}
+
+.photo {
+  padding: 5px;
+  text-align: center;
+}
+
+.photo-button {
+  padding: 15px 15px 15px 15px;
+}
+
+.add_photo_image {
+  text-align: center;
+  padding: 0 15px 15px 15px;
+}
+
+.navbar-header-picture {
+  width: 55px;
+  border-radius: 50%;
+  padding: 2px 0 2px 0;
+  // margin-top: 4px;
+}
+
+.headerbar-left {
+  height: 60px;
+  padding-left: 90px !important;
+  padding-top: 10px;
+  font-size: 1.2em;
+}
+
+.headerbar-center {
+  height: 60px;
+  // margin-top: 3%;
+  // text-align: center;
+}
+
+.headerbar-right {
+  height: 60px;
+  padding-left: 180px !important;
+}
+
+@media (max-width: 960px) {
+  .headerbar-left {
+    height: 60px;
+    text-align: center;
+    font-size: 1em;
+    padding-left: 0 !important;
+    padding-top: 0;
+  }
+
+  .headerbar-center {
+    display: none;
+  }
+
+  .headerbar-right {
+    height: 60px;
+    text-align: center;
+    padding-left: 0 !important;
+  }
+}
+/* this is for the paperclip choose button */
+
+/*Copied from bootstrap */
+ /*.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}*/
+/*Also */
+/* .btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}*/
+/* This is copied from https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload.css */
+/*I COMMENTED THIS OUT ON 9-23-2015 HAVE NO IDEA WHAT IS FOR - IF DATE IS 10-15-2015 OR LATER DELETE THIS*/
+/*
+ .fileinput-button {
+  position: relative;
+  overflow: hidden;
+  width: 75%;
+}
+
+ .fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter:'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+*/

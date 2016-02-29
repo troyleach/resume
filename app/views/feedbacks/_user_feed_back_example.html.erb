@@ -1,0 +1,27 @@
+<div>
+  <% @feedback = Feedback.new %>
+  <% @default_text = 'This is where your feedback would go. Leave us feedback on things to change things to add to make this a better experience. If there is an error, explain   what you were trying to do to cause the error, and exactly what the error says!' %>
+</div>
+
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h4 class="modal-title">Only a Example</h4>
+  </div>
+  <div class="modal-body">
+    <%= simple_form_for @feedback, :html => {:class => 'form-horizontal' } do |f| %>
+      <%= f.input :name, :required => true, label_html: { class: 'feedback_cell' }, placeholder: 'Your Name' %>
+      <%= f.input :email, :required => true, label_html: { class: 'feedback_cell' }, placeholder: 'Your Email' %>
+      <%= f.input :subject, :required => true, label_html: { class: 'feedback_cell' }, placeholder: 'What panel are you on?' %>
+      <%= f.input :message, :as => :text, :required => true, label_html: { class: 'feedback_cell' }, input_html: { class: 'feedback_textarea' }, placeholder: @default_text %>
+  <div>
+      <%= f.button :submit, 'Send message', disabled: true, class: "btn btn-primary" %>
+  </div>
+    <% end %>
+    <div class="mandatory_field">
+      <p>* Mandatory field</p>
+    </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+</div>

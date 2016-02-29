@@ -1,0 +1,20 @@
+// This file contains all colors for this app (shades of green)
+// Main colors of app
+@import 'color_package_six';
+
+// button colors of the app if custom, otherwise use bootstrap
+// login in button
+$button: #04bfbf;
+$buttonHover: #cafcd8;
+
+// // font's below
+$josefinSlab: 'Josefin Slab', serif;
+$specialElite: 'Special Elite', cursive;
+$jacquesFrancoisShadow: 'Jacques Francois Shadow', cursive;
+
+// styling for buttons
+.buttonStyle {
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75); 
+}

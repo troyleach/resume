@@ -1,0 +1,29 @@
+<div class="ruby_code">
+  <% default_text = 'Tells us whats on your mind!' %>
+</div>
+
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h4 class="modal-title">Send us Feedback</h4>
+
+  </div>
+  <div class="modal-body">
+    <%= simple_form_for @feedback, :html => {:class => 'form-horizontal' } do |f| %>
+      <%= f.input :name, label_html: { class: 'feedback_cell' }, placeholder: 'Your Name' %>
+      <%= f.input :email, data: { autocomplete_source: "this is text"}, :required => true, label_html: { class: 'feedback_cell' }, placeholder: 'Your Email' %>
+      <%= f.input :subject, :required => true, label_html: { class: 'feedback_cell' }, placeholder: 'The Subject' %>
+      <%= f.input :message, :as => :text, :required => true, label_html: { class: 'feedback_cell' }, input_html: { class: 'feedback_textarea' }, placeholder: default_text %>
+  <div class="feedback-submit">
+      <%= f.button :submit, 'Send message', class: "btn btn-primary" %>
+  </div>
+    <% end %>
+    <div class="mandatory_field">
+      <p>* Mandatory field</p>
+    </div>
+</div>
+  <div class="modal-footer">
+    <a href="/"><button type="button" class="btn btn-default feedback-submit" data-dismiss="modal">Cancel</button></a>
+  </div>
+
+<!-- value: "#{current_user.student.student_full_name}", placeholder: "#{current_user.student.student_full_name}" -->

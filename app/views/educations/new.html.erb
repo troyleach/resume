@@ -1,0 +1,85 @@
+<div>
+	<div ng-controller="resumeCtrl">
+		
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">Education</h3>
+								<p class="pull-right">Start with your most recent Education</p>
+							</div>
+							<div class="panel-body">
+								<form role="form" method="get" action="<%= new_professional_skill_path %>">
+									<pre>{{educations}}</pre>
+									<div ng-repeat="education in educations" class="well">
+										<div class="form-group">
+											<label class="control-label">Degree Earned</label>
+											<input class="form-control" type="text" ng-model="education.degree">
+										</div>
+										<div class="form-group">
+											<label class="control-label">University Name</label>
+											<input class="form-control" type="text" ng-model="education.universityName">
+										</div>
+										<div class="row">
+											<div class="form-group col-md-6" id="double_column">
+												<label class="control-label">Attended From:</label>
+												<input class="form-control" type="date" ng-model="education.startDate">
+											</div>
+											<div class="form-group col-md-6" id="double_column">
+												<label class="control-label">To:</label>
+												<label ng-show='$first' class="checkbox-present"><input type="checkbox" ng-model='education.present'> &nbsp;&nbsp;&nbsp;Present</label>
+												<div ng-if='!education.present'>
+													<input class="form-control" type="date" ng-model="education.endDate">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col-md-6" id="double_column">
+												<div ng-repeat="highlight in education.highlights">
+													<table border="1">
+														<tr>
+															<td>
+																<label class="control-label">Highlights</label>
+																<input class="form-control" type="text" ng-click="anotherHighlightForm(education, highlight)" ng-model="highlight.highlight" placeholder="Enter specific details about this education">
+															</td>
+															<td style="padding: 8px;" ng-if="highlight.highlight">
+																<label class="remove" ng-click="removeHighlightForm(education, highlight)"><i class="fa fa-2x fa-times-circle-o"></i>
+																</label>
+															</td>
+														</tr>
+													</table>
+												</div>
+												<div ng-if="moreThanOne(educations)" class="form-group col-md-12" id="double_column" style="padding-top: 10px;">
+										    		<label class="control-label btn-lg btn-danger glyphicon glyphicon-remove-circle" style='width: 50%' ng-click="removeEducationForm(education)">&nbsp;Delete Education</label>
+												</div>
+											</div>
+										</div>
+										<hr>
+									</div>
+								<div class="row">
+									<div class="form-group col-md-4" id="double_column">
+										<label class="control-label btn-lg btn-success fa fa-1x fa-plus fa-fw" style='width: 100%' ng-click="anotherEducationForm()">&nbsp;&nbsp;&nbsp;&nbsp;Add Another Education</label>
+									</div>
+									<div class="col-md-4"></div>
+									<div class="form-group col-md-4" id="double_column">
+										<!-- <a href=<%= new_education_path %>> -->
+										<button type=" submit "="=" " "="" class='btn-lg btn-success' style='width: 100%' ng-click="addAllEducations(educations)">Submit</button>
+										<!-- </a> -->
+									</div>
+								</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- Below is for the user feedback modal -->
+		  <div class="splat">
+		    <%= render '../views/layouts/feed_back' %>
+		  </div>
+	</div>
+</div>

@@ -1,0 +1,136 @@
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary" ng-model="referecncesCollapsed">
+
+          <div class="panel-heading" ng-click="referecncesCollapsed=!referecncesCollapsed">
+            <span class="panel-title panel_title">References</span>
+            <div class="pull-right">
+              <i class="expand fa fa-plus-circle fa-2x" ng-show="referecncesCollapsed"></i>
+              <i class="expand fa fa-minus-circle fa-2x" ng-show="!referecncesCollapsed"></i>
+            </div>
+          </div>
+          
+          <div class="panel-body" ng-show="!referecncesCollapsed" ng-switch on="referecncesPanelStatus">
+  <!-- below is the code to view the professional skills -->
+            <div ng-switch-when="show">
+              <div class="form-group well" ng-repeat="reference in referecnces">
+                <div class="row">
+                  <div class='panel_body'>
+
+                    <div class="col-md-3 panel_text">
+                      First Name:
+                    </div>
+                    <div class="col-md-9">
+                    {{reference.first_name || "N/A"}}
+                    </div>
+
+                    <div class="col-md-3 panel_text">
+                      Last Name:
+                    </div>
+                    <div class="col-md-9">
+                    {{reference.last_name || "N/A"}}
+                    </div>
+
+                    <div class="col-md-3 panel_text">
+                      Company Name:
+                    </div>
+                    <div class="col-md-9">
+                    {{reference.company_name || "N/A"}}
+                    </div>
+
+                    <div class="col-md-3 panel_text">
+                      Phone Number:
+                    </div>
+                    <div class="col-md-9">
+                    {{reference.phone_number || "N/A"}}
+                    </div>
+
+                    <div class="col-md-3 panel_text">
+                      Email:
+                    </div>
+                    <div class="col-md-9">
+                    {{reference.email || "N/A"}}
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            <div class="row">
+              <div class="col-md-12 show-references">
+                <p ng-if='!showReferences'><i class="fa fa-hand-o-right"></i>&nbsp;&nbsp;&nbsp;References available upon request</p>
+                <p ng-if='showReferences'><i class="fa fa-hand-o-right"></i>&nbsp;&nbsp;&nbsp;References will be displayed on your resume</p>
+              </div>
+              <div class="pull-right">
+                <div class="form-group col-md-12" class="pull-right" >
+                  <div class="form-group" ng-show="referecncesPanelStatus='show'">
+                    <button type=" submit "="=" " "="" class='btn btn-lg btn-primary' style='width: 100%' ng-click="editReferecncesPanel()">Edit</button>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end of row -->
+          </div><!-- ng-switch-when="show" -->
+              
+  <!-- below is the code to edit the professional skills  -->
+
+          <div ng-switch-when="edit">
+            <form role="form" method="get" action="#">
+              <div class="well" ng-repeat="reference in referecnces">
+                
+                <div class="form-group">
+                  <label class="control-label">First Name:</label>
+                  <input class="form-control" type="text" ng-change='changed(reference)' ng-model="reference.first_name">
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label">Last Name:</label>
+                  <input class="form-control" type="text" ng-model="reference.last_name">
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label">Company Name:</label>
+                  <input class="form-control" type="text" ng-model="reference.company_name">
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label">Phone Number:</label>
+                  <input class="form-control" type="text" ng-model="reference.phone_number">
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label">Email:</label>
+                  <input class="form-control" type="text" ng-model="reference.email">
+                </div>
+
+                <label class="remove" ng-click="deleteReference($index, reference)"><i class="fa fa-2x fa-times-circle-o"></i>Delete Reference</label>
+                
+              </div><!-- end ng-repeat="reference in references -->
+            </form>
+
+              <div class="col-md-12 show-references">
+                  <input type="checkbox" ng-model='showReferences' />&nbsp;&nbsp;Show my references on my resume!
+                  <a href="#" uib-tooltip="{{referencesTip}}" tooltip-class="customClass"><i class="fa fa-question-circle"></i></a>
+              </div>
+
+              <div class="row">
+                <div class="panel_buttons col-md-4">
+                  <button class='btn-lg btn-success' style='width: 75%'>
+                    <label class="control-label" ng-click="referecnces.push( {} )">Add Reference</label>
+                  </button>
+                </div>
+                <div class="panel_buttons col-md-4">
+                  <button type=" submit "="=" " "="" class='btn-lg btn-danger' style='width: 75%' ng-click="resetReferecncesPanel()">Cancel</button>
+                </div>
+                <div class="panel_buttons col-md-4" id="double_column">
+                  <button type=" submit "="=" " "="" class='btn-lg btn-success' style='width: 75%' ng-click="updateReferences(referecnces, showReferences)">Update</button>
+                </div>
+              </div><!-- end of row -->
+          </div><!-- end ng-switch-when="edit" -->
+        </div><!-- end of panel-body ng-switch on="professionalSkillPanelStatus" -->
+
+        </div><!-- end of panel panel-primary -->
+      </div><!-- end of first col-md-12 -->
+    </div><!-- end of first row -->
+  </div><!-- end of container -->
+</div><!-- end of section -->

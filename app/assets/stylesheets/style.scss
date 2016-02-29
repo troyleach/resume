@@ -1,0 +1,163 @@
+  @import "over_all_app_colors.scss";
+
+* {
+  margin: 0;
+}
+// TODO - DELETE THE STYLE WELCOME-TEXT
+.welcome-text {
+  font-size: 75%;
+}
+
+body {
+  font-size: 10em;
+  height: 100%;
+}
+
+/* Specify styling for tooltip contents */
+.tooltip.customClass .tooltip-inner {
+    color: #880000;
+    background-color: #ffff66;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    border-radius: 8px;
+}
+/* Hide arrow */
+.tooltip.customClass .tooltip-arrow {
+    display: none;
+}
+/* Specify styling for tooltip contents ABOVE */
+
+a {
+  color: $contrastText !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: $contrastColor !important;
+}
+
+a:visited {
+    color: #000;
+}
+
+.btn {
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75); 
+}
+
+.add-button {
+  display: inline !important;
+}
+
+.show-references {
+  margin: 5px 0 25px 0;
+  text-align: left;
+}
+
+.section {
+  background-color: $mainBackGroundColor;
+  padding: 0 !important;
+}
+
+#logo_text {
+  color: #000;
+  font-family: $specialElite;
+  font-size: 200%;
+  font-weight: 900;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+.alert {
+  background-color: #f6e497;
+  width: 50%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.sign-up-panel {
+  margin-top: 50px;
+}
+
+.panel {
+  border-color: $mainColor !important;
+  box-shadow:5px 5px 2px rgba(122,116,116,0.15) !important;
+  font-size: 1.2em;
+}
+
+.panel-body {
+  background-color: #fff;
+  text-align: left;
+}
+
+.panel-heading {
+  border-bottom: $mainColor !important;
+  background-color: $mainColor !important;
+  height: 80px;
+  text-align: left;
+}
+
+.panel-title {
+  color: $titleText !important;
+  font-size: 2.5em !important;
+
+}
+
+.checkbox-present {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.panel_buttons {
+  text-align: center;
+  padding: 5px;
+}
+
+.push-buttons {
+  margin-top: 25px;
+}
+
+.expand {
+  margin-top: 10px;
+}
+
+.form-control-details {
+  width: 50%
+}
+
+.fa-plus-circle {
+  color: green;
+}
+
+.fa-times-circle-o {
+  color: red;
+}
+
+table{
+  border: none;
+  width: 100%;
+}
+
+th, td {
+  border: none;
+}
+
+.delete_circle {
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+//  color wheel
+
+.color-circle {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+

@@ -1,0 +1,175 @@
+<div class='ruby-code'><% bullet = 'green-splat.png' %></div>
+<div id="online-resume-container">
+  <div id="online-resume-three-page-body">
+
+      <header class='row'>
+        <div class="col-md-12">
+          <div class="online-resume-about">
+            <h2 class="resume-one-h2-mod"><%= @student.job_title %></h2>
+            <div class="well about-well well-color" style="margin: 15px 15px 0 15px">
+              <div class="row">
+                <div class="col-md-4 center-things users-photo">
+                  <%= image_tag @student.photo.url(:medium), class: 'resume-three-users-picture' %>
+                </div>
+                <div class="col-md-4 center-things users-name">
+                  <div class='resume-three-h1'>
+                    <strong><%= @student.first_name.capitalize %></strong> <%= @student.last_name.capitalize %>
+                  </div>
+                  <div class="contact-me-button">
+                    <button class="btn btn-default"><a href="mailto:<%= @student.email %>">Contact me</a></button>
+                  </div>
+                  <div class="contact-me-button">
+                    <%= link_to "Download my Resume", pdf_down_load_path(template: 'leach', id: @student.id, format: "pdf"), class: 'btn btn-default' %>
+                  </div>
+                </div>
+                <div class="col-md-4 center-right users-info">
+                  <table>
+                    <tr class="resume_one_table_row">
+                      <td class="resume_one_table_col"><a href="mailto:<%= @student.email %>"><%= @student.email %></a></td>
+                      <td class="resume_one_table_col-two"><%= image_tag("mail.png", :alt => "email", width: '24' ) %></td>
+                    </tr>
+                    <tr class="resume_one_table_row">
+                      <td class="resume_one_table_col"><a href="<%= @student.linkedin %>" target='_blank'>Linkedin</a></td>
+                      <td class="resume_one_table_col-two"><%= image_tag("LinkedIn24x24.png", :alt => "linkedin", width: '24' ) %></td>
+                    </tr>
+                    <tr class="resume_one_table_row">
+                      <td class="resume_one_table_col"><a href="https://twitter.com/<%= @student.twitter %>" target='_blank'><%= @student.twitter %></a></td>
+                      <td class="resume_one_table_col-two"><%= image_tag("Dirty Logo Twitter 2-64x64.png", :alt => "twitter", width: '24' ) %></td>
+                    </tr>
+                    <tr class="resume_one_table_row">
+                      <td class="resume_one_table_col"><a href="https://github.com/<%= @student.github %>" target='_blank'><%= @student.github %></a></td>
+                      <td class="resume_one_table_col-two"><%= image_tag("GitHub24x24.png", :alt => "twitter", width: '24' ) %></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='online-resume-three-about' class="col-md-12">
+                  <strong>Summary:</strong>&nbsp;&nbsp;<%= @student.short_bio %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      
+
+      <section id='online-resume-skills' class='row'>
+        <div class="col-md-8">
+          <div class="online-resume-experiences">
+            <h2 class="resume-one-h2-mod">EXPERIENCES</h2>
+              <% @sorted_experiences.each do |experience| %>
+              <div class="well well-color" style="margin: 15px 15px 0 15px">
+                <div class="resume-one-h3">
+                  <% if experience.present %>
+                    <strong><%= return_year(experience.start_date) %> - Present</strong>
+                  <% else %>
+                    <strong><%= return_year(experience.start_date) %> - <%= return_year(experience.end_date) %></strong>
+                  <% end %>
+                </div>
+                <div>
+                  <span class="resume-one-h2 resume-one-company-name"><%= experience.company_name %></span><br>
+                </div>
+                <div>
+                  <p class="resume-one-h3 resume-one-job-title"><%= experience.job_title %></p>
+                </div>
+                <div class="resume-one-job-description">
+                  <p><%= experience.job_description %></p>
+                </div>
+                <div class="resume-one-education-detail">
+                  <% experience.experience_details.each do |detail| %>
+                    <span><%= image_tag(bullet, :alt => "splat", width: '24' ) %>&nbsp;&nbsp;&nbsp;<%= detail.detail %></span><br>
+                  <% end %>
+                </div>
+              </div>
+              <% end %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="online-resume-education">
+            <h2 class="resume-one-h2-mod">EDUCATION</h2>
+              <% @sorted_educaitons.each do |education| %>
+              <div class="well well-color" style="margin: 15px 15px 0 15px">
+                <div class="resume-one-h3">
+                  <% if education.present == true %>
+                    <strong><%= return_year(education.start_date) %> - Present</strong>
+                  <% else %>
+                    <strong><%= return_year(education.start_date) %> - <%= return_year(education.end_date) %></strong>
+                  <% end %>
+                </div>
+                <div class="resume-one-degree">
+                  <strong class='resume-one-university-name'><%= education.university_name %></strong><br>
+                  <p><%= education.degree %></p>
+                </div>
+                <div class="resume-one-education-detail">
+                  <% education.education_details.each do |detail| %>
+                    <span><%= image_tag(bullet, :alt => "splat", width: '24' ) %>&nbsp;&nbsp;&nbsp;<%= detail.detail %></span><br>
+                  <% end %>
+                    
+                </div>
+              </div>
+              <% end %>
+          </div>
+         </div>
+      </section>
+
+      
+      <section class='row'>
+        <div class="col-md-12">
+          <div class="online-resume-skills" >
+            <h2 class="resume-one-h2-mod">SKILLS AND INTERESTS</h2>
+            <div class="well about-well well-color" style="margin: 15px 15px 0 15px">
+              <div class='row'>
+                <div class='online-resume-three-skills col-md-6'>
+                <p class='skills-title'>Professional skills:</p>
+                  <% @student.professional_skills.each do |skill| %>
+                    <span class='resume-one-skills'><%= image_tag(bullet, :alt => "splat", width: '24' ) %>&nbsp;&nbsp;&nbsp;<%= skill.skill_name %></span>
+                  <% end %>
+                </div>
+                  <div class='online-resume-three-skills col-md-6'>
+<p class='skills-title'>Personal skills:</p>
+
+                 <% @student.personal_skills.each do |skill| %>
+                  <span class='resume-one-skills'><%= image_tag(bullet, :alt => "splat", width: '24' ) %>&nbsp;&nbsp;&nbsp;<%= skill.skill_name %></span>
+                <% end %>
+              </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      
+      <footer id='online-resume-footer' class='row'>
+        <div class="col-md-2">
+          
+        </div>
+        <div class="col-md-2">
+          <% if @student.blog %>
+            <a href="http://<%= @student.blog %>" target='_blank'>My Website</a>
+          <% end %>
+        </div>
+        <div class="col-md-2">
+          <% if @student.email %>
+            <a href="mailto:<%= @student.email %>">Email Me</a>
+          <% end %>
+        </div>
+        <div class="col-md-2">
+          <% if @student.linkedin %>
+            <a href="<%= @student.linkedin %>" target='_blank'>Linkedin</a>
+          <% end %>
+        </div>
+        <div class="col-md-2">
+          <% if @student.twitter %>
+            <a href="https://twitter.com/<%= @student.twitter %>" target='_blank'><%= @student.twitter %></a>
+          <% end %>
+        </div>
+        <div class="col-md-2">
+          <a href="/">Your Resume</a>
+        </div>
+      </footer>
+    
+  </div><!-- End of page body -->
+</div><!-- End of page container <--></-->

@@ -1,0 +1,82 @@
+<div>
+	<div ng-controller="resumeCtrl">
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">Experience</h3>
+								<p class="pull-right">Start with your most recent job</p>
+							</div>
+							<div class="panel-body">
+								<form role="form" method="get" action="<%= new_education_path %>">
+								<div ng-repeat="experience in experiences" class="well">
+									<div class="form-group">
+										<label class="control-label">Job Title</label>
+										<input class="form-control" type="text" ng-model="experience.job_title">
+									</div>
+									<div class="form-group">
+										<label class="control-label">Company Name</label>
+										<input class="form-control" type="text" ng-model="experience.company_name">
+									</div>
+									<div class="row">
+										<div class="form-group col-md-6" id="double_column">
+											<label class="control-label">Employed From:</label>
+											<input class="form-control" type="date" ng-model="experience.start_date">
+										</div>
+										<div class="form-group col-md-6" id="double_column">
+											<label class="control-label">To:</label>
+											<label ng-show='$first' class="checkbox-present"><input type="checkbox" ng-model='experience.present'> &nbsp;&nbsp;&nbsp;Present</label>
+											<div ng-if='!experience.present'>
+												<input class="form-control" type="date" ng-model="experience.end_date">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">Job Description</label>
+										<textarea class="form-control" rows="5" ng-model="experience.job_description"></textarea>
+									</div>
+
+									<div class="row">
+										<div class="form-group col-md-6" id="double_column">
+											<div ng-repeat="detail in experience.details">
+												<label class="control-label">Details:</label>
+												<table border="1">
+													<tr>
+														<td>
+															<input class="form-control" type="text" ng-click="addNewDetail(experience, detail)" ng-model="detail.detail" placeholder="Enter details about the experience">
+														</td>
+														<td style="padding: 8px;" ng-if="detail.detail">
+															<label class="remove" ng-click="removeDetail(experience, detail)"><i class="fa fa-2x fa-times-circle-o"></i></label>
+														</td>
+													</tr>
+												</table>
+											</div><!-- End of detail ng-repeat -->
+										</div>
+										<div ng-if="moreThanOne(experiences)" class="form-group col-md-12" id="double_column">
+										    <label class="control-label btn-lg btn-danger glyphicon glyphicon-remove-circle" style='width: 25%' ng-click="removeExperience(experience)">&nbsp;Delete Experience</label>
+										</div>
+									</div>
+									<hr>
+								</div><!-- End of experiences ng-repeat -->
+									
+									<div class="row">
+										<div class="form-group col-md-4" id="double_column">
+										    <label class="btn btn-lg btn-success fa fa-1x fa-plus fa-fw" style='width: 100%' ng-click="addNewexperience()">&nbsp;&nbsp;&nbsp;&nbsp;Add Another Experience</label>
+										</div>
+										<div class="col-md-4"></div>
+										<div class="form-group col-md-4" id="double_column">
+									    <button type="submit" class='btn btn-lg btn-success fa fa-thumbs-o-up' style='width: 100%' ng-click="addAllExperiences(experiences)">&nbsp;&nbsp;&nbsp;&nbsp;Submit</button>
+									  	</div>
+									</div>
+								</form>
+							</div><!-- end of panel-body -->
+						</div><!-- end of panel panel-primary -->
+					</div><!-- end of first col-md-12 -->
+				</div><!-- end of first row -->
+			</div><!-- end of container -->
+		</div><!-- end of section -->
+		
+	</div><!-- end of ng-controller -->
+</div>

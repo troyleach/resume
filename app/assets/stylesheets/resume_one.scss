@@ -1,0 +1,385 @@
+$resumeOneBodyColor: #E5E6E5  ;
+$resumeOnePanelsBackgroundColor: #fdfdfd;
+$resumeOneIndevidualPanelBackgroundColor: #f0f2ef;
+// $resumeOneHeaderTextColor: #c0c1bf;
+$resumeOneHeaderTextColor: #d8d9d7;
+$resumeOneHeaderTextcolor: #8c305d;
+$resumeOneContrastColor: #308C5F;
+$resumeOneLinkColor: #494A42;
+$resumeOneLinkColor: #308C5F;
+$wellBackgroundColor: #ffffff;
+
+
+// font's below
+$josefinSlab: 'Josefin Slab', serif;
+$specialElite: 'Special Elite', cursive;
+$jacquesFrancoisShadow: 'Jacques Francois Shadow', cursive;
+
+.resume-one-borders {
+  border: none;
+}
+
+.center-things {
+  text-align: center;
+}
+
+.center-right {
+  text-align: right;
+}
+
+.well-color {
+  background-color: $wellBackgroundColor !important;
+  margin: 15px 15px 0 15px;
+  // min-height: 200px;
+  padding: 5px !important;
+}
+
+#online-resume-page-body {
+  @extend .resume-one-borders;
+  background-color: $resumeOnePanelsBackgroundColor;
+  margin: 0 auto;
+  width: 85%;
+  height: 100%;
+  border: 15px solid $resumeOneHeaderTextColor;
+}
+
+#online-resume-three-page-body {
+  @extend .resume-one-borders;
+  @extend #online-resume-page-body;
+  border: none;
+}
+
+#online-resume-container {
+  background-color: $resumeOneBodyColor;
+  height: 100%;
+  font-size: 1.2em;
+  font-weight: 300;
+  border-top: 1px solid #000;
+}
+
+#online-resume-header {
+  @extend .resume-one-borders;
+  margin: 0 auto;
+  background-color: $resumeOneIndevidualPanelBackgroundColor;
+  height: 200px;
+  position: relative;
+}
+
+.contact-me-button {
+  padding-top: 25px;
+}
+
+.online-resume-about {
+  background-color: $resumeOneIndevidualPanelBackgroundColor;
+  min-height: 300px;
+  margin: 15px 15px 0 15px;
+  padding-bottom: 15px;
+}
+
+.online-resume-skills {
+  background-color: $resumeOneIndevidualPanelBackgroundColor;
+  min-height: 300px;
+  margin: 0 15px 15px 15px;
+  padding-bottom: 15px;
+}
+
+.online-resume-three-about {
+  text-align: justify;
+  margin-top: 15px;
+  padding: 15px 45px 15px 45px;
+}
+
+.online-resume-three-skills{
+}
+
+.skills-title {
+  margin: 0 0 0 15px;
+}
+.about-well {
+
+}
+
+.users-name {
+  padding-top: 15px;
+}
+
+.users-photo {
+  padding-top: 15px;
+}
+
+.users-info {
+  padding: 15px 30px 0 0 !important;
+}
+
+// .resume_one_table_col-two {
+//   width: 50px;
+// }
+
+.resume-one-h1 {
+  @extend .resume-one-borders;
+  position: absolute;
+  display: block;
+  padding-left: 15px;
+  font-family: $josefinSlab;
+  font-weight: 900;
+  font-size: 400%;
+  margin: 0 0 0 15px;
+}
+
+.resume-three-h1 {
+  @extend .resume-one-borders;
+  font-family: $josefinSlab;
+  font-weight: 900;
+  font-size: 300%;
+  margin: 0 0 0 0;
+}
+
+.resume-one-h2 {
+  color: $resumeOneHeaderTextcolor;
+  font-family: $josefinSlab;
+  font-weight: 900;
+  padding: 10px;
+  margin: 0;
+  font-size: 150%;
+}
+
+.resume-one-h2-mod {
+  @extend .resume-one-h2;
+  background-color: $resumeOneHeaderTextColor;
+}
+
+.resume-one-h3 {
+  color: $resumeOneHeaderTextcolor;
+  font-family: $josefinSlab;
+  font-weight: 900;
+  font-size: 125%;
+  padding-left: 10px;
+}
+
+#online-resume-about {
+  @extend .resume-one-borders;
+  background-color: $resumeOneIndevidualPanelBackgroundColor;
+  margin: 15px 30px 0 0;
+  margin-bottom: 0;
+  width: 70%;
+  min-height: 100px;
+  text-align: justify;
+}
+
+#online-resume-skills {
+ @extend .resume-one-borders;
+ background-color: $resumeOnePanelsBackgroundColor;
+ margin: 0 auto;
+}
+
+#online-resume-footer {
+  @extend .resume-one-borders;
+  background-color: $resumeOneIndevidualPanelBackgroundColor;
+  margin: 0 15px 15px 15px;
+  padding: 8px;
+  height: 100%;
+  text-align: center;
+}
+
+.resume-one-users-picture {
+  position: absolute;
+  border-radius: 50%;
+  @extend .resume-one-borders;
+  background-color: pink;
+  margin-top: 100px;
+  margin-left: 53.54px;
+  width: 200px;
+  height: 200px;
+  -webkit-box-shadow: 0px 22px 104px -13px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 22px 104px -13px rgba(0,0,0,0.75);
+  box-shadow: 0px 22px 104px -13px rgba(0,0,0,0.75);
+}
+
+.resume-three-users-picture {
+  @extend .resume-one-borders;
+  border-radius: 15px;
+  background-color: pink;
+  width: 200px;
+  height: auto;
+  -webkit-box-shadow: 0px 22px 104px -13px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 22px 104px -13px rgba(0,0,0,0.75);
+  box-shadow: 0px 22px 104px -13px rgba(0,0,0,0.75);
+}
+
+.resume-one-header-col-right {
+  @extend .resume-one-borders;  
+  height: 100%;
+  width: 94%;
+  float: right;
+  padding: 15px 0 0 0;
+  margin: 0 30px 0 0;
+  position: relative;
+  vertical-align: bottom;
+}
+
+.resume-one-address {
+  @extend .resume-one-borders;
+  text-align: right;
+  height: 120px;
+}
+
+.resume-one-title {
+  @extend .resume-one-borders;
+  width: 65%;
+  top: 30px;
+  background-color: $resumeOneHeaderTextColor;
+  text-align: right;
+  margin-top: 14px;
+  margin-left: auto;
+}
+
+.resume-one-resume-title {
+  @extend .resume-one-h2;
+  background-color: $resumeOneHeaderTextColor;
+}
+
+
+.online-resume-education {
+  @extend .resume-one-borders;
+  background-color: $resumeOneIndevidualPanelBackgroundColor;
+  min-height: 300px;
+  margin: 15px 0 15px 0;
+  padding-bottom: 15px;
+}
+
+  .resume-one-degree {
+    padding: 0 0 0 15px;
+  }
+
+  .resume-one-university-name {
+    color: $resumeOneContrastColor;
+  }
+
+  .resume-one-education-detail {
+    padding: 0 0 0 25px;
+  }
+
+.online-resume-professional-skills {
+  @extend .resume-one-borders;
+  background-color: $resumeOneIndevidualPanelBackgroundColor;
+  min-height: 300px;
+  margin: 15px 0 15px 0;
+}
+
+  .resume-one-skills-containter {
+    display: block;
+    margin-top: 10px;
+    min-height: 201px !important;
+  }
+
+  .resume-one-skills {
+    margin: 0 0 0 10px;
+    float: left;
+    width: 45%;
+  }
+
+.online-resume-personal-skills {
+  @extend .resume-one-borders;
+  background-color: $resumeOneIndevidualPanelBackgroundColor;
+  min-height: 300px;
+  margin: 15px 0 15px 0;
+}
+
+.online-resume-experiences {
+  @extend .resume-one-borders;
+  background-color: $resumeOneIndevidualPanelBackgroundColor;
+  min-height: 930px;
+  margin: 15px -15px 15px 0;
+  padding-bottom: 15px;
+}
+
+  .resume-one-company-name {
+    color: $resumeOneContrastColor;
+  }
+
+  .resume-one-job-title {
+    padding-left: 10px;
+  }
+
+  .resume-one-job-description {
+    padding: 0 20px 0 20px;
+    text-align: justify;
+  }
+
+// small devices
+  @media (max-width: 960px) {
+
+    .well {
+      padding: 10px !important;
+    }
+
+    #online-resume-page-body {
+      width: 95%;
+    }
+
+    #online-resume-container {
+      font-size: 1em !important;
+      font-weight: 300;
+    }
+
+    #online-resume-container {
+      height: 100%;
+      font-size: 1.2em;
+      font-weight: 300;
+    }
+
+    .resume-one-h1 {
+      position: static;
+      display: block;
+      padding-left: 15px;
+      font-family: $josefinSlab;
+      font-weight: 900;
+      font-size: 300%;
+    }
+
+    .resume-one-h2 {
+      font-size: 125%;
+    }
+
+    .resume-one-title {
+      width: 100%;
+      font-size: 85%;
+      text-align: center;
+    }
+
+    .resume-one-header-col-right {
+      height: 100%;
+      width: 90%;
+      float: right;
+      padding: 15px 0 0 0;
+      margin: 0 15px 0 0;
+      position: relative;
+      vertical-align: bottom;
+    }
+
+    .resume-one-users-picture {
+      position: static;
+      border-radius: 50%;
+      background-color: pink;
+      margin: 15px 0 0 75px;
+      width: 150px;
+      height: 150px;
+      -webkit-box-shadow: 0px 22px 104px -13px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 22px 104px -13px rgba(0,0,0,0.75);
+      box-shadow: 0px 22px 104px -13px rgba(0,0,0,0.75);
+    }
+
+    #online-resume-about {
+      margin: 15px 15px 15px 0;
+      margin-bottom: 0;
+      width: 90%;
+      min-height: 100px;
+      text-align: justify;
+    }
+
+    .online-resume-experiences {
+      margin: 15px 0 15px 0;
+    }
+
+  }
+

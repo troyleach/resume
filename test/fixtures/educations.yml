@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2015-03-15
+  end_date: 2015-03-15
+  degree: MyString
+  university_name: MyString
+  student_id: 1
+
+two:
+  start_date: 2015-03-15
+  end_date: 2015-03-15
+  degree: MyString
+  university_name: MyString
+  student_id: 1

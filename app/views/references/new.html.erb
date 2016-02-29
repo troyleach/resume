@@ -1,0 +1,66 @@
+<div>
+    <div ng-controller="resumeCtrl">
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">References</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" method="get" action="<%= edit_profile_path(@student_id) %>">
+                                    <div ng-repeat="reference in references" class="well">
+                                        <div class="form-group">
+                                            <label class="control-label" for="exampleInputEmail1">First Name</label>
+                                            <input class="form-control" id="exampleInputEmail1"
+                                            placeholder="Enter First Name" type="text" ng-model="reference.firstName">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label" for="exampleInputPassword1">Last Name</label>
+                                            <input class="form-control" id="exampleInputPassword1"
+                                            placeholder="Enter Last Name" type="text" ng-model="reference.lastName">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label" for="exampleInputPassword1">Email</label>
+                                            <input class="form-control" id="exampleInputPassword1" placeholder="Enter Email" type="text" ng-model="reference.email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label" for="exampleInputPassword1">Phone Number</label>
+                                            <input class="form-control" id="exampleInputPassword1"
+                                            placeholder="Phone Number" type="text" ng-model="reference.phoneNumber">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label" for="exampleInputPassword1">Company</label>
+                                            <input class="form-control" id="exampleInputPassword1" placeholder="Company name"
+                                            type="text" ng-model="reference.companyName">
+                                        </div>
+                                        <div id="double_column" class="form-group col-md-12" style="margin-bottom: 10px" ng-if="moreThanOne(references)">
+                                            <label class="control-label btn-lg btn-danger glyphicon glyphicon-remove-circle add-button" style='width: 30%' ng-click="removeReferenceForm(reference)">&nbsp;Delete Reference</label>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 show-references">
+                                            <input type="checkbox" ng-model='showReferences' />&nbsp;&nbsp;Show my references on my resume!
+                                            <a href="#" uib-tooltip="{{referencesTip}}" tooltip-class="customClass"><i class="fa fa-question-circle"></i></a>
+                                        </div>
+                                        <div class="form-group col-md-4" id="double_column">
+                                            <button type='button' class="btn-lg btn-success" style='width: 100%' ng-click="anotherReferenceForm()">&nbsp;&nbsp;&nbsp;&nbsp;Add Reference</button>
+                                        </div>
+                                        <div class="form-group col-md-4" id="double_column">
+                                            <!-- a middle button -->
+                                        </div>
+                                        <div class="form-group col-md-4" id="double_column">
+                                          <button type="submit "="=" " "="" class='btn-lg btn-success' style='width: 100%' ng-click="addNewReferences(references)">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+<div id="land_page_container row">
+  <header class='landing_page_header'>
+    <div class="landing_page_body">
+      <p class="landing_page_header_text">Take control of your <span class='landing_page_text_unique'>future</span></p>
+      <h1 class="landing_page_header_text">Build a resume that works for you</h1>
+      
+      <div class="fancy"><span><%= image_tag "logo_white.png", width: '100', height: '100', alt: 'Site Logo' %></span></div>
+      <!-- Trigger the modal with a button -->
+        <button type="button" class='btn btn-md btn-login' id="myBtn" style="width: 10%;">Login</button>
+      <div class="not-a-memeber">
+        <%= link_to "Not a member yet?", new_registration_path(resource_name) %>
+      </div>
+    </div>
+  </header>
+  
+  <section class='landing_page_section_one'>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="landing_page_titles">Building a resume</h1>
+        <ul>
+          <li>
+            <div class="flag">
+              <i class="fa fa-thumb-tack"></i>
+            </div>
+            Take a easy survey about you
+          </li>
+          <li>
+            <div class="flag">
+              <i class="fa fa-thumb-tack"></i>
+            </div>
+            Manage and edit your resume
+          </li>
+          <li>
+            <div class="flag">
+              <i class="fa fa-thumb-tack"></i>
+            </div>
+            Create, and post your resume on the World Wide Web
+          </li>
+          <li>
+            <div class="flag">
+              <i class="fa fa-thumb-tack"></i>
+            </div>
+            Pick from templates to make a PDF
+          </li>
+          <li>
+            <div class="flag">
+              <i class="fa fa-thumb-tack"></i>
+            </div>
+            Down load PDF's of your resume
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<!-- below is the modal -->
+<div id="landing_page">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <form role="form">
+            <div class="form-group">
+              <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;<%= f.label :Username %><br />
+              <%= f.email_field :email, autofocus: true, class: 'modal-input-box' %>
+            </div>
+            <div class="form-group">
+              <span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;&nbsp;<%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "off", class: 'modal-input-box' %>
+            </div>
+            <div class="checkbox">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+              <%= f.submit "Log in", class: 'btn btn-success btn-block' %>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          <br>
+          <br>
+          <%= render "devise/shared/links" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end of modal container div -->
+<footer>
+  <div class="landing_page_footer">
+    <div class="">
+      <div class="row ">
+        <div class="col-md-4"><!-- place holders --></div>
+        <div class="col-md-4">
+          <p class="landing_page_footer_title">
+            Company
+          </p>
+            <% if signed_in? %>
+              <p class="landing_page_contact"><a href="/feedbacks">Contact US</a></p>
+            <% else %>
+              <p class="landing_page_contact"><a href="mailto:yourresume@gmail.com?Subject=This%20is%20what%20I%20think" target="_top">Contact US</a></p>
+            <% end %>
+        </div>
+        <div class="col-md-4"><!-- place holders --><br><br><br><br><br><br></div>
+      </div>
+      <p class="landing_page_date">Your Resume Copyright <%= Time.now.year %></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(exports) {
+    var themeChanger = {
+      settings: {
+        wrapper: $('.wrapper'),
+        buttons: $('.controls > button')
+      },
+      
+      init: function () {
+        var _self = this;
+        this.settings.buttons.on('click', function () {
+          var $node = $(this),
+              theme = $node.data('theme');
+          _self.settings.wrapper.removeClass().addClass('.wrapper ' + theme);
+          _self.settings.buttons.removeAttr('disabled');
+          $node.attr('disabled', true);
+        });
+      }
+    };
+    
+    themeChanger.init();
+  }(window));
+</script>

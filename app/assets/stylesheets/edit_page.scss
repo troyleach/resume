@@ -1,0 +1,66 @@
+@import "over_all_app_colors.scss";
+
+.edit_containter {
+  border: none;
+  padding-top: 0;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.button_center {
+  text-align: center;
+  padding: 0;
+}
+
+.button_left {
+  padding-left: 50px;
+}
+
+.button_text {
+  padding-right: 10px;
+}
+
+.btn {
+  width: 100%;
+}
+
+.btn-group {
+  text-align: center;
+  margin-left: -10px;
+}
+
+.button_one, .button_two, .button_three {
+  border: none;
+  text-align: center;
+}
+
+.menu-click {
+  border: none;
+  background-color: $mainBackGroundColor;
+  text-align: center;
+  height: 25px;
+}
+
+.nav-bar {
+  border-radius: 10px 10px 0 0;
+  padding: 5px 5px 0 5px;
+  border: 1px solid gray;
+}
+
+.hide-menu {
+  color: $menuTextColor;
+  width: 100px;
+  margin: 0 auto;
+  border: none;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 0 5px 5px 5px;
+  border-radius: 0 0 10px 10px;
+}
+
+.show-menu {
+  @extend .hide-menu;
+  background-color: $menuBackgroundColor;
+  // background-color: rgba(17, 76, 95, 0.5);
+}

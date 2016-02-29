@@ -1,0 +1,13 @@
+<div id='rails_code'>
+  <% 
+    @resume_type = 3
+   %>
+</div>
+
+<% if @resume_type == 1 %>
+  <%= render '../views/profiles/resume_types/resume_one' %>
+<% elsif @resume_type == 2 %>
+  <%= render '../views/profiles/resume_types/resume_two' %>
+<% elsif @resume_type == 3 %>
+  <%= render '../views/profiles/resume_types/resume_three' %>
+<% end %>

@@ -1,0 +1,44 @@
+<div>
+  <div ng-controller="resumeCtrl" ng-init="fetchData(<%= @student.id %>)">
+    <div class="edit_containter">
+      <%= render 'menu' %>      
+      <%= render 'personal_informations' %>
+      <%= render 'experiences' %>
+      <%= render 'educations' %>
+      <%= render 'professional_skills' %>
+      <%= render 'personal_skills' %>
+      <%= render 'references' %>
+    </div> 
+  </div><!-- end of ng-controller -->
+</div>
+
+<!-- Below is for the user feedback modal -->
+  <div class="splat">
+    <%= render '../views/layouts/feed_back' %>
+  </div>
+  <div class="push"></div>
+
+<!-- Below is for the user paperclip modal -->
+<div class="">
+  <div class="row">
+    <!-- Modal -->
+    <div class="modal fade user_feed_back" id="myModal3" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <%= render 'paperclip_upload' %>
+      </div>
+    </div>
+  </div>
+</div>
+   
+<script>
+  $(document).ready(function(){
+      $("#paperClip").click(function(){
+          $("#myModal3").modal({backdrop: false});
+      });
+  });
+</script>
+
+<script>
+  $('.dropdown-toggle').dropdown()
+</script>

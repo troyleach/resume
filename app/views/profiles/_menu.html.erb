@@ -1,0 +1,124 @@
+<div class="menu-container" ng-controller='MenuCtrl'>
+    <ul class="menuTemplate2 decor2_1">
+
+
+        <!-- <li><a href="#CSS-Menu">stuff goes here</a></li>
+        <li class="separator"></li>
+        <li><a href="#Horizontal-Menus" class="arrow">Horizontal Menus</a>
+            <div class="drop decor2_2" style="width: 640px;">
+                <div class='left'>
+                    <b>Down load your PDF</b>
+                    <div>
+                        <a href="#">Html 5 menu</a><br />
+                        <a href="#">Web menu CSS</a><br />
+                        <a href="#">Css menus</a><br />
+                        <a href="#">Nav element</a><br />
+                        <a href="#">SEO menu</a>
+                    </div>
+                </div>
+                <div class='left'>
+                    <b>View your PDF</b>
+                    <div>
+                        <a href="#">Menu template</a><br />
+                        <a href="#">Menu skin</a><br />
+                        <a href="#">Web menu styles</a><br />
+                        <a href="#">Best css menus</a>
+                    </div>
+                </div>
+                <div class='left'>
+                    <b>General things</b>
+                    <div>
+                        <a href="#">Search engine friendly</a><br />
+                        <a href="#">Best css menu</a><br />
+                        <a href="#">Most popular menus</a><br />
+                        <a href="#">Best web menu designs</a><br />
+                        <a href="#">E-Commerce sites</a><br />
+                        <a href="#">CSS Templates</a><br />
+                        <a href="#">Menu Design Templates</a><br />
+                        <a href="#">Clean layout & alignment</a><br />
+                        <a href="#">Favorite menus</a>
+                    </div>
+                </div>
+                <div class='left' style="text-align:right; width:200px;">
+                    <img src="../img/demo/hd6.png" style="width:128px; height:128px;" /><br />
+                    Search Engine friendly
+                </div>
+                <div style='clear: both;'></div>
+            </div>
+        </li>
+        <li class="separator"></li>
+        <li><a href="#CSS">stuff goes here</a></li>
+        <li class="separator"></li>
+        <li><a href="#Horizontal-Menu-CSS">stuff goes here</a></li>
+        <li class="separator"></li> -->
+
+        <li><a href="#Web-Menu" class="arrow menu-button">Your Menu</a>
+            <div class="drop decor2_2 dropToLeft2" style="width: 500px;">
+            <div class="menu-title"><p>Hello <%= @student.first_name.capitalize %></p></div>
+            <div class="main-container">
+                <div class='left templates'>
+                    <b>VIEW TEMPLATES</b>
+                    <div>
+                        <a ng-mouseover="leachTempIn()" ng-mouseleave="leachTempOut()" onclick="window.open('/resumes/leach_template_show/<%= @student.id %>.pdf','winname','directories=0,titlebar=0,toolbar=0,location=0,status=0,menubar=0,scrollbars=0,resizable=0,width=680,height=700');">View Leach template</a><br />
+                        <a ng-mouseover="walshTempIn()" ng-mouseleave="walshTempOut()" onclick="window.open('/resumes/walsh_template_show/<%= @student.id %>.pdf','winname','directories=0,titlebar=0,toolbar=0,location=0,status=0,menubar=0,scrollbars=0,resizable=0,width=680,height=700');">View Walsh template</a><br />
+                    </div>
+                    <b>GET PDF</b>
+                    <div>
+                        <span  ng-mouseover="leachTempIn()" ng-mouseleave="leachTempOut()"><%= link_to "Get Leach PDF!", pdf_down_load_path(template: 'leach', id: @student.id, format: "pdf") %></span><br />
+                        <span ng-mouseover="walshTempIn()" ng-mouseleave="walshTempOut()"> <%= link_to "Get Walsh PDF!", pdf_down_load_path(template: 'walsh', id: @student.id, format: "pdf") %></span><br />
+                        
+                    </div>
+                </div>
+                <div class='left general'>
+                    <b>GENERAL</b><br />
+                        <span ng-mouseover='contactIn()' ng-mouseleave="contactOut()"><a href="mailto:yourresume29@gmail.com">Contact Us</a></span><br />
+                        <span ng-mouseover='attachPicIn()' ng-mouseleave="attachPicOut()"><a href="#"><span id="paperClip">Attached a Picture</span></a></span><br />
+                        <span ng-model='onlineResume' ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="/<%= @student.first_name %><%= @student.last_name %>" >Online Resume</a></span><br />
+                </div>
+                  <div>
+                    <div ng-show='onlineResume' class="image">
+                        <%= image_tag('onlineResume.png', width: '175px', height: 'auto') %><br>
+                    </div>
+                    <div ng-show='leachTemp' class="image">
+                        <%= image_tag('leach-template.png', width: '175px', height: 'auto') %><br>
+                    </div>
+                    <div ng-show='walshTemp' class="image">
+                        <%= image_tag('walsh-template.png', width: '175px', height: 'auto') %><br>
+                    </div>
+                    <div ng-show='attachPic' class="image">
+                      <i class="fa fa-5x fa-picture-o"></i>
+                    </div>
+                    <div ng-show="contact" class="image">
+                      <%= image_tag('contact-us-png.png', width: '100px', height: 'auto') %><br>
+                    </div>
+                  </div>
+                 </div><!-- end of row -->   
+            </div>
+        </li>
+
+
+        <!-- <li class="separator"></li>
+        <li><a href="#Web-Menus" class="arrow">Web Menus</a>
+            <div class="drop decor2_2 dropToLeft" style="width: 460px;">
+                <img src="../img/demo/css-menu-t3.jpg" style="float:left; width:98px;
+                    height:180px;margin:10px 80px 10px 40px;" />
+                <div class='left'>
+                    <b>PURE CSS MENU</b>
+                    <div>
+                        <a href="#">Build your script</a><br />
+                        <a href="#">Review current offers</a><br />
+                        <a href="#">See All ...</a>
+                    </div>
+                    <b>POPOUT MENU</b>
+                    <div>
+                        <a href="#">Find a location</a><br />
+                        <a href="#">Request a test drive</a><br />
+                        <a href="#">See All ...</a>
+                    </div>
+                </div>
+            </div>
+        </li> -->
+
+
+    </ul>
+</div>

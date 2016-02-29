@@ -1,0 +1,26 @@
+#feedback-panel {
+  width: 75%;
+  margin: 25px auto;
+}
+
+.feedback_cell {
+  width: 100px;
+  padding: 5px;
+  clear: both;
+}
+
+.feedback_textarea {
+  width: 75%;
+  height: 100px;
+}
+
+.feedback-submit {
+  margin: auto;
+  width: 50%;
+}
+
+.mandatory_field {
+  padding-top: 8px;
+  color: red;
+  font-weight: 900;
+}

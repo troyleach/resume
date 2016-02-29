@@ -1,0 +1,17 @@
+@import "over_all_app_colors.scss";
+
+.modal-header, h4, .close {
+  background-color: $modalHeader;
+  color: $contrastText !important;
+  text-align: center;
+  font-size: 100%;
+}
+
+.modal-input-box {
+  width: 75%;
+}
+
+.modal-footer {
+  background-color: $modalFooter;
+  text-align: center !important;
+}

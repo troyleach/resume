@@ -1,0 +1,227 @@
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary" ng-model="personalCollapsed">
+          <div class="panel-heading" ng-click="personalCollapsed=!personalCollapsed">
+            <span class="panel-title panel_title">Personal Information</span>
+            <div class="pull-right">
+              <i class="expand fa fa-plus-circle fa-2x" ng-show="personalCollapsed"></i>
+              <i class="expand fa fa-minus-circle fa-2x" ng-show="!personalCollapsed"></i>
+            </div>
+          </div>
+
+        <div class="panel-body" ng-show="!personalCollapsed" ng-switch on="pPanelStatus">
+          <div ng-switch-when="show">
+            <div class="form-group well">
+              <div class="row">
+                <div class='panel_body'>
+                  <div class="col-md-4 panel_text">
+                    First Name:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].first_name}}
+                  </div>
+
+                  <div class="col-md-4 panel_text">
+                    Last Name:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].last_name}}
+                  </div>
+
+                  <div class="col-md-4 panel_text">
+                    Address:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].address}}
+                  </div>
+
+                  <div class="col-md-4 panel_text">
+                    Apartment or suite:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].appt_number || 'N/A' }}
+                  </div>
+
+                  <div class="col-md-4 panel_text">
+                    City:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].city ||'N/A'}}
+                  </div>
+
+                  <div class="col-md-4 panel_text">
+                    State:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].state || 'N/A'}}
+                  </div>
+
+                  <div class="col-md-4 panel_text">
+                    Job Title:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].job_title || 'N/A'}}
+                  </div>
+                  
+                  <div class="col-md-4 panel_text">
+                    Phone number:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].phone_number || 'N/A'}}
+                  </div>
+
+                  <div class="col-md-4 panel_text">
+                    Email:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].email || 'N/A'}}
+                  </div>
+
+                  <div class="col-md-4 panel_text">
+                    Linkedin:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].linkedin || 'N/A'}}
+                  </div>
+
+                  <div class="col-md-4 panel_text">
+                    Twitter:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].twitter || 'N/A'}}
+                  </div>
+
+                  <div class="col-md-4 panel_text">
+                    Blog:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].blog || 'N/A'}}
+                  </div>
+
+                  <div class="col-md-4 panel_text">
+                    Profile:
+                  </div>
+                  <div class="col-md-8">
+                    {{personalInformation[0].short_bio || 'None'}}
+                  </div>
+
+                </div><!-- panel body -->
+              </div><!-- end of row -->
+            </div><!-- class="form-group" ng-repeat="job in personal information" -->
+              
+            <div class="row">
+            <div class="pull-right">
+                <div class="form-group col-md-12" class="pull-right" >
+                  <div class="form-group" ng-show="pPanelStatus='show'">
+                    <button type=" submit "="=" " "="" class='btn btn-lg btn-primary' style='width: 100%' ng-click="editPPanel()">Edit</button>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end of row -->
+          </div><!-- ng-switch-when="show" -->
+            
+<!-- below is the code to edit the personal information -->
+
+            <div ng-switch-when="edit">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel-body">
+                    <div ng-repeat="info in personalInformation">
+                    <!-- <form role="form" method="get" action="#"> -->
+                      <div class="row">
+                        <div class="form-group col-md-6" id="double_column">
+                          <label class="control-label" for="exampleInputEmail1">First Name</label>
+                          <input class="form-control" id="exampleInputEmail1"
+                          placeholder="Enter First Name" type="text" ng-model="info.first_name">
+                        </div>
+                        <div class="form-group col-md-6" id="double_column">
+                          <label class="control-label" for="exampleInputPassword1">Last Name</label>
+                          <input class="form-control" id="exampleInputPassword1"
+                          placeholder="Enter Last Name" type="text" ng-model="info.last_name">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label" for="exampleInputPassword1">Job Title</label>
+                        <input class="form-control" id="exampleInputPassword1" placeholder="Enter Job Title"
+                        type="text" ng-model="info.job_title">
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label" for="exampleInputPassword1">Email</label>
+                        <input class="form-control" id="exampleInputPassword1" placeholder="Enter Email"
+                        type="email" ng-model="info.email">
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label" for="exampleInputPassword1">Phone Number</label>
+                        <input class="form-control" id="exampleInputPassword1"
+                        placeholder="Phone Number" type="text" ng-model="info.phone_number">
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-md-6" id="double_column">
+                          <label class="control-label" for="exampleInputPassword1">Address,</label>
+                          <input class="form-control" id="exampleInputPassword1"
+                          placeholder="Street Address" type="text" ng-model="info.address">
+                        </div>
+                        <div class="form-group col-md-3" id="double_column">
+                          <label class="control-label" for="exampleInputPassword1">City</label>
+                          <input class="form-control" id="exampleInputPassword1"
+                          placeholder="City" type="text" ng-model="info.city">
+                        </div>
+                        <div class="form-group col-md-3" id="double_column">
+                          <label class="control-label" for="exampleInputPassword1" contenteditable="true">State</label>
+                          <input class="form-control" id="exampleInputPassword1" placeholder="State"
+                          type="text" ng-model="info.state">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-md-3" id="double_column">
+                          <label class="control-label" for="exampleInputPassword1">Github,</label>
+                          <input class="form-control" id="exampleInputPassword1"
+                          placeholder="Github" type="text" ng-model="info.github">
+                        </div>
+                        <div class="form-group col-md-3" id="double_column">
+                          <label class="control-label" for="exampleInputPassword1">Personal Website/Blog</label>
+                          <input class="form-control" id="exampleInputPassword1"
+                          placeholder="Blog" type="text" ng-model="info.blog">
+                        </div>
+                        <div class="form-group col-md-3" id="double_column">
+                          <label class="control-label" for="exampleInputPassword1">Twitter,</label>
+                          <input class="form-control" id="exampleInputPassword1"
+                          placeholder="Twitter" type="text" ng-model="info.twitter">
+                        </div>
+                        <div class="form-group col-md-3" id="double_column">
+                          <label class="control-label" for="exampleInputPassword1">Linkedin,</label>
+                          <input class="form-control" id="exampleInputPassword1"
+                          placeholder="Linkedin" type="text" ng-model="info.linkedin">
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-md-12">
+                          <label class="control-label" for="exampleInputPassword1">Short Bio / About you</label>
+                          <textarea class='form-control short-bio-box' id="exampleInputPassword1" type="textarea" ng-model="info.short_bio">Enter your short bio here...</textarea>
+                        </div>
+                      </div><!-- end of ng-repeat of personal info-->
+                     
+                    <!-- </form> -->
+                  </div>
+                </div>
+                <div class="panel_buttons col-md-4">
+                  <!-- place holder column -->
+                </div>
+                <div class="panel_buttons col-md-4">
+                  <button type=" submit "="=" " "="" class='btn-lg btn-danger' style='width: 75%' ng-click="resetPPanel()">Cancel</button>
+                </div>
+                <div class="panel_buttons col-md-4 pull-right" id="double_column">
+                  <button type=" submit "="=" " "="" class='btn-lg btn-success  pull-right' style='width: 75%' ng-click="updatePersonalInformation(personalInformation)">Update</button>
+                </div>
+
+              </div><!-- end of row -->
+            </div><!-- end ng-switch-when="edit" -->
+          </div><!-- end of panel-body ng-switch on="ePanelStatus" -->
+        </div><!-- end of panel panel-primary -->
+      </div><!-- end of first col-md-12 -->
+    </div><!-- end of first row -->
+  </div><!-- end of container -->
+</div><!-- end of section -->
